@@ -1,0 +1,29 @@
+======================
+Faça o algoritmo de um procedimento que receba três valores inteiros e escreva todos os números compreendidos entre os valores dos dois primeiros parâmetros (inclusive), que sejam múltiplos do valor passado como terceiro parâmetro. Se o primeiro parâmetro for menor que o segundo a lista deve ser escrita em ordem crescente, e se for maior, em ordem decrescente.
+======================
+
+procedimento MúltiplosDoTerceiroValorEntreOsDoisPrimeiros (n1, n2, n3: inteiro)
+var
+	i, aux: inteiro
+inicio
+	se (n1 = n2) então
+		se (n1 MOD n3 = 0) então
+			escreva(n1)
+		fim se
+	fim se
+	se (n1 < n2) então
+		para i de n1 até n2 faça
+			se (i MOD n3 = 0) então
+				escreve(i)
+			fim se
+		fim para
+	senão
+		aux <- n1
+		enquanto (aux >= n2) faça
+			se (aux MOD n3 = 0) faça
+				escreva(aux)
+			fim se
+			aux <- aux - 1
+		fim enquanto
+	fim se
+fim procedimento
