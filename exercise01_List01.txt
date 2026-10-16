@@ -1,0 +1,18 @@
+=======================
+Enunciado: Faça o algoritmo de uma função que receba três valores reais e retorne o de maior valor.
+=======================
+
+função ComparaMaior (a, b , c: real) : real
+var
+	maior: real
+inicio
+	se a>b e a>c então
+		maior <- a
+	fim se
+	se b>a e b>c então
+		maior <-b
+	senão 
+		maior <- c
+	fim se
+	retorne maior
+fim função
