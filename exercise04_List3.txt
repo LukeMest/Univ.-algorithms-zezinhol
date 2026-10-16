@@ -1,0 +1,14 @@
+======================
+Faça o algoritmo de uma função inteira recursiva que calcule o máximo divisor comum (MDC) de dois números inteiros estritamente positivos transmitidos a ela como parâmetros. Para o cálculo do MDC utilize o algoritmo de Euclides: MDC(a, a) = a, e sendo a > b, positivos, e r o resto da divisão inteira de a por b, temos que MDC(a, b) = MDC(b, r). Retorne 0 como flag em caso de erro.
+======================
+
+função MDC(a, b: inteiro) : inteiro
+inicio
+	se a <= 0 ou b <= 0 então 
+		retorne 0
+	fim se
+	se a mod b = 0 então
+		retorne b
+	fim se
+	retorne MDC(b, a mod b)
+fim função
