@@ -1,0 +1,20 @@
+========================
+ Faça um algoritmo de uma função string recursiva que receba como parâmetro uma string e devolve uma string na qual todas as letras sejam minúsculas.
+ =======================
+
+função Minúscula (s: string) : string
+var
+	função AuxMinúsculas (s: string, i: inteiro) : string
+	inicio
+		se i = 0 então
+			retorne “”
+		fim se
+		se asc(s[i]) >= asc(‘A’) e asc(s[i]) <= asc(‘Z’) então
+			retorne AuxMinusculas(s, i-1) + chr(asc(s[i]) - asc(‘A’) + asc(‘a’)
+		senão
+			retorne AuxMinúsculas(s, i-1) + s[i]
+		fim se
+	fim função
+inicio
+	retorne AuxMinusculas(s, tamanho(s))
+fim função
