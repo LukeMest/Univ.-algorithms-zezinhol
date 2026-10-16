@@ -1,0 +1,15 @@
+==========================
+Faça um algoritmo de uma função inteira recursiva que receba um parâmetro inteiro e retorne um inteiro que seja o reverso (de trás pra frente) do inteiro passado como
+==========================
+
+função ReverteNum (i: inteiro) : inteiro
+var
+	função Reversor(i, r: inteiro) : inteiro
+		se i = 0
+			retorne r
+		fim se
+		retorne ReverteNum(i div 10, r*10 + i MOD 10)
+	fim função
+inicio
+	retorne Reverso(i, 0)
+fim função
