@@ -1,0 +1,19 @@
+=====================
+Faça o algoritmo de um procedimento que leia dois valores string que sejam garantidamente distintos, retornando estes dois valores, sendo que o primeiro parâmetro deve ser o menor e o segundo o maior.
+=====================
+
+procedimento ComparandoStrings(ref s1, ref s2: string)
+var
+	aux: string
+inicio
+	leia(s1,s2)
+	enquanto (s1=s2) faça
+		escreva(“As strings são iguais, digite novamente!”)
+		leia(s1, s2)
+	fim enquanto
+	se s1 > s2 então
+		aux <- s1
+		s1 <- s2
+		s2 <- aux
+	fim se
+fim procedimento
