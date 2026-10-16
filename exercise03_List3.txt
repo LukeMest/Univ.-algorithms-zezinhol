@@ -1,0 +1,21 @@
+=======================
+A sequência de Fibonacci é dada pela relação de recorrência F0 = 1, F1 = 1, Fn = Fn−1+Fn−2, para n ≥ 2. Então, encontre a relação de recorrência que dá o número de chamadas da função algorítmica que calcula a citada função. Em seguida implemente o algoritmo da função inteira recursiva que implementa a relação de recorrência encontrada por você.
+
+
+Relação de recorrência:
+f(0) = 1
+f(1) = 1
+f(n) = f(n-1) + f(n-2) + 1
+para todos n elementos Naturais | n >= 2
+=======================
+
+função ChamadasFibonacci(n: inteiro) : inteiro
+inicio
+	se n < 0 então
+		retorne -1
+	fim se
+	se n <= 1 então
+		retorne 1
+	fim se
+	retorne ChamadasFibonacci(n-1) + ChamadasFibonacci(n-2) + 1
+fim função
