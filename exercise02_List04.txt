@@ -1,0 +1,54 @@
+===================
+Faça o algoritmo de uma função inteira [iterativa|recursiva] para retornar o tamanho de uma lista encadeada simples de reais, cujo ponteiro inicial é passado como parâmetro.
+Caso erro: Nenhum, o tamanho dela é 0
+Caso definido: head aponta para um nó ou é NULO
+Caso simples: head = NULO -> 0
+Recursão: 1 + 0 tamanho do resto da lista, que começa em head↑.prox
+Tam(head)= {=, head = NULO; 1 + Tam(head↑.prox), caso contrário}
+====================
+
+VERSÃO RECURSIVA
+
+tipos 
+	PNo = ponteiro para TNo
+	TNo = registro
+        info: inteiro
+        prox: PNo
+	fim registro
+
+var
+
+função TamanhoRecursivo(head: PNo) : inteiro
+inicio
+	se head = NULO então 
+		retorne 0
+	fim se
+	retorne 1 + TamanhoRecursivo(head↑.prox)
+fim função
+
+
+
+
+ITERATIVO
+tipos
+	PNo = ponteiro para TNo
+	TNo = registro
+        info: inteiro
+        prox: TNo
+	fim registro
+
+var
+
+função TamanhoIterativo(head: PNo) : inteiro
+var
+	p: PNo
+	tam: inteiro
+inicio
+	p <- head
+	tam <- 0
+	enquanto p<>NULO faça
+		tam <- tam + 1
+		p <- p↑.prox
+	fim enquanto
+	retorne tam
+fim função

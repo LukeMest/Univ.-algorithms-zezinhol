@@ -1,0 +1,42 @@
+=========================
+Faça o algoritmo de uma função lógica [iterativa|recursiva] para dizer se um determinado
+elemento x real aparece na lista encadeada simples.
+=========================
+
+tipos 
+    PNo = ponteiro para TNo
+    TNo = registro
+        info: real
+        prox: PNo
+    fim registro
+var
+função ExisteElementoReal(l: PNo; X: real) : lógico
+var
+    p: PNo
+inicio
+    p <- l 
+    enquanto p != NULO faça
+        se p↑.info = x então
+            retorne VERDADEIRO
+        fim se
+        p <- p↑.prox
+    fim enquanto
+    retorne FALSO
+fim função
+
+VERSÃO ITERATIVA
+1. Caso de erro	Nenhum. Lista vazia não é erro, só significa “não achei”.
+2. Caso definido	head aponta para um nó ou é NULO
+3. Caso simples	dois: head = NULO → FALSO; head↑.info = x → VERDADEIRO
+4. Recursão	procurar no resto da lista: E(head↑.prox)
+5. (3) + (4)	veja abaixo
+
+função ExisteElementoReal(l: PNo; x: real) : lógico
+inicio  
+    se l = NULO então retorne FALSO
+        retorne FALSO
+    fim se 
+    se l↑.info = x então   
+        retorne VERDADEIRO
+    fim se
+    retorne ExisteElementoReal
