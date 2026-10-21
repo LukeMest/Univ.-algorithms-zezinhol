@@ -1,0 +1,18 @@
+================
+Faça o algoritmo de uma função lógica para retornar se uma lista encadeada simples de inteiros, cujo ponteiro inicial é passado como parâmetro, está vazia.
+================
+tipos
+	PNo = ponteiro para TNo
+	TNo = registro
+	fim registro
+
+var
+
+função ListaVazia(head: PNo) : lógico
+início
+	se head = NULO então
+		retorne VERDADEIRO
+	senão
+		retorne FALSO
+	fim se
+fim função
