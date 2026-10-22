@@ -1,0 +1,43 @@
+=======================================
+Faça o algoritmo de uma função inteira [iterativa|recursiva] para dizer quantas vezes um determinado elemento x real aparece na lista encadeada simples.
+=======================================
+
+VERSÃO ITERATIVA
+
+tipos
+    PNo = ponteiro para TNo 
+    TNo = registro
+        info: real
+        prox: PNo
+    fim registro
+var
+
+função ContaIterativa(l: PNo; x: real) : inteiro
+var
+    p: PNo
+    cont: inteiro
+inicio
+    p <- l 
+    cont <- 0
+    enquantp p != NULO faça
+        se p↑.info = x então    
+            cont <- cont + 1
+        fim se
+        p <- p↑.prox
+    fim enquanto
+    retorne cont
+fim função
+
+VERSÃO recursiva
+
+função ContaRecursiva(l: PNo; x: real) : inteiro
+inicio  
+    se l = NULO
+        retorne 0
+    fim se
+    se l↑.info = x então
+        retorne 1 + ContaRecursiva(l↑.prox, x)
+    senão
+        retorne ContaRecursiva(l↑.prox, x)
+    fim se
+fim função
